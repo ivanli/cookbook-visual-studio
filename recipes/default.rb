@@ -10,9 +10,9 @@
 include_recipe 'chocolatey'
 
 package_name = "visualstudio"
-package_name += "express" if node['visual-studio']['variant'] == :express
+package_name += "express" if node['visual-studio']['variant'] == 'express'
 package_name += node['visual-studio']['year']
-if node['visual-studio']['variant'] == :express
+if node['visual-studio']['variant'] == 'express'
   package_name += "windowsdesktop"
 else
   package_name += node['visual-studio']['variant'].to_s
